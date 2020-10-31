@@ -3,6 +3,10 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import { routes } from './routes'
 import { store } from './store/store'
+import { currency } from 'vuetensils/src/filters'
+
+Vue.filter('currency', currency);
+
 
 Vue.use(VueRouter);
 

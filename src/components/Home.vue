@@ -13,9 +13,9 @@
 			<tbody class="home--table-body">
 				<tr v-for="crypto in cryptos" :key="crypto.id">
 					<td>{{ crypto.name }}</td>
-					<td>{{ crypto.current_price }}</td>
-					<td>{{ crypto.market_cap }}</td>
-					<td>{{crypto.total_volume}}</td>
+					<td>{{ crypto.current_price | currency('USD', 'en-US') }}</td>
+					<td>{{ crypto.market_cap | currency('USD', 'en-US') }}</td>
+					<td>{{crypto.total_volume | currency('USD', 'en-US')}}</td>
 				</tr>
 			</tbody>
 		</table>
