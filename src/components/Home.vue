@@ -11,23 +11,11 @@
 				</tr>
 			</thead>
 			<tbody class="home--table-body">
-				<tr>
-					<td>Bitcoin</td>
-					<td>100</td>
-					<td>200</td>
-					<td>300</td>
-				</tr>
-				<tr>
-					<td>Ethereum</td>
-					<td>100</td>
-					<td>200</td>
-					<td>300</td>
-				</tr>
-				<tr>
-					<td>Cardano</td>
-					<td>100</td>
-					<td>200</td>
-					<td>300</td>
+				<tr v-for="crypto in cryptos" :key="crypto.id">
+					<td>{{ crypto.name }}</td>
+					<td>{{ crypto.current_price }}</td>
+					<td>{{ crypto.market_cap }}</td>
+					<td>{{crypto.total_volume}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -35,8 +23,13 @@
 </template>
 
 <script>
-export default {
+import { mapState } from 'vuex';
 
+export default {
+	computed: mapState(['cryptos']),
+	created(){
+		this.$store.dispatch('loadCryptos')
+	}
 };
 </script>
 
