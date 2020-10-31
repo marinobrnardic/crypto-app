@@ -41,7 +41,10 @@ export default {
 </script>
 
 <style lang="sass">
+@import "../assets/styles/vars"
+
 .home
+	font-family: $font-oswald
 	width: 90%
 	margin: 0 auto	
 .home--table
