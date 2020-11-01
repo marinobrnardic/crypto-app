@@ -28,21 +28,23 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {  
     data() {
         return {
-            currentCrypto: ''
+           
         }
     },
-    computed: mapState(['cryptos']),
-    mounted(){
-        this.$nextTick(function(){
-            let currentCrypto = this.$store.state.cryptos.find(c => c.symbol === this.$route.params.id);
-            this.currentCrypto = currentCrypto;
-            this.$store.dispatch('loadCryptos')
-        });
+    methods: mapActions(['loadCryptos']),
+    computed: {
+       currentCrypto(){
+            let curr = this.$store.state.cryptos.find(c => c.symbol === this.$route.params.id);
+    	    return curr ? curr : {};
+       }
+    },
+    created(){
+        this.loadCryptos();
     }
 };
 </script>

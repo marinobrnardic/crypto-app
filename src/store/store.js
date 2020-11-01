@@ -14,14 +14,16 @@ export const store = new Vuex.Store({
         }
     },
     actions: {
-        loadCryptos ({commit}){
-            axios
+        loadCryptos ({commit, state }){
+            if(!state.cryptos.length){
+                axios
                 .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&per_page=10', {
                 })
                 .then(response => {
                     commit('SET_CRYPTOS', response.data);
                     console.log(response.data);
                 })
+            }
         }
     }
 });
