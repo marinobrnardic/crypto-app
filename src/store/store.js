@@ -21,7 +21,6 @@ export const store = new Vuex.Store({
                 })
                 .then(response => {
                     commit('SET_CRYPTOS', response.data);
-                    console.log(response.data);
                 })
             }
         }

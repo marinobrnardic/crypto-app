@@ -6,22 +6,27 @@
 }
 	
 .view--container{
-	width: 80%;
+	max-width: 1400px;
 	margin: 0 auto;
     padding: 1rem 0;
     &__flex{
         display: flex; 
         flex-direction: row; 
         justify-content: space-between;
-        flex-flow: row wrap;
+        align-items: center;
+    }
+    &__border{
+        border-bottom: 1px solid $grey2;
     }
 
     .flex-item{
-        flex: 1 0 calc(25% - 5px);
-        max-width: 1 0 calc(25% - 5px);
-        margin-bottom: 2rem;
+        @media only screen and (max-width: 767px){
+            display: block; 
+            width: 100%; 
+            text-align: center;
+            margin: .5rem auto;
+        }
     }
-
 }
 
 .view--title{
@@ -30,7 +35,28 @@
     line-height: 2;
     &__flex{
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @media screen and (max-width: 767px){
+            justify-content: center;
+        }
     }
+}
+
+.view--title-image{
+    max-width: 3rem; 
+    margin-right: 1rem;
+}
+
+.market-cap-rank{
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    background-color: $grey2;
+    border-radius: .3rem;
+    text-align: center;
 }
 
 .view--paragraph{
@@ -40,7 +66,10 @@
 }
 
 .view--table{
-	width: 100%;
+    width: 100%;
+    &__small{
+        width: 1000px;
+    }
 }
 
 .sticky-col {
@@ -90,6 +119,12 @@
 	&:last-child{
         padding-right: 1rem;
     }
+    &__percentage{
+        color: $error-red;
+    }
+    &__green{
+        color: $success-green;
+    }
 }
 
 .view--table-link{
@@ -102,15 +137,17 @@
 }
 
 .view--button{
+    display: block;
+    width: fit-content;
     font-size: 1rem;
     color: $white;
     border-radius: .25rem;
     background-color: $blue;
     padding: 1rem 2rem;
+    margin-left: auto;
     transition: .5s;
     text-align: center;
-    display: inline-block;
-    width: auto;
+
     &:hover{
         background-color: darken($blue, 10%);
         color: $white;
@@ -119,7 +156,6 @@
     @media screen and (max-width: 767px){
         width: -webkit-fill-available;
     }
-
 }
 
 
@@ -135,7 +171,6 @@
             flex: 1;
             max-width: 100%;
         }
-
     }
 
     .view--title{
@@ -161,7 +196,7 @@
         }
     }
     .view--title{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .view--table{
@@ -171,20 +206,20 @@
 @media screen and (min-width: 768px) and (max-width: 1400px){
     .view--container{
         width: 85%;
-        // flex-direction: row;
+        flex-direction: column;
         &__overflow{
             overflow: scroll;
         }
 
         .flex-item{
-            flex: 1 0 calc(50% - 5px);
-            max-width: 1 0 calc(50% - 5px);
+            flex: 1;
+            max-width: 100%;
         }
 
     }
 
-    .view--table{
+    .view--table,
+    .view--table__small{
         width: 1400px;
     }
-
 }
