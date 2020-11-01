@@ -6,9 +6,9 @@
 }
 	
 .view--container{
-	width: 1400px;
+	width: 80%;
 	margin: 0 auto;
-	padding: 1rem 0;
+    padding: 1rem 0;
 }
 
 .view--title{
@@ -17,7 +17,7 @@
 	line-height: 2;
 }
 
-.home--paragraph{
+.view--paragraph{
     font-size: 2rem;
     font-weight: 300;
     color: $grey;
@@ -25,14 +25,19 @@
 
 .view--table{
 	width: 1400px;
-	cellpadding: 0;
-	cellspacing: 0;
+}
+
+.sticky-col {
+    left: 0;
+    position: sticky;
+    width: 140px;
+    background-color: inherit;
 }
 
 .view--table-header{
 	text-align: left;
 	font-size: 14px;
-	color: $grey;
+    color: $grey;
 }
 
 .view--table-header-row{
@@ -44,12 +49,14 @@
     &:nth-child(odd){
         background-color: $light-grey;
     }
+    &:nth-child(even){
+        background-color: $white;
+    }
 }
-	
-	
 		
 .view--table-heading{
     vertical-align: middle;
+    background-color: $white;
 }
 	
 .view--table-icon{
@@ -58,7 +65,7 @@
 }
 
 .view--table-data{
-	color: #2d2727;
+	color: $dark-grey2;
 	vertical-align: middle;
 	&:nth-child(1){
         padding-left: 1rem;
@@ -80,13 +87,33 @@
 
 
 @media screen and (max-width: 320px) {
-	.home--container{
+	.view--container{
         width: 280px;
         &__overflow{
             overflow: scroll;
         }
     }
-    .home--title{
+    .view--title{
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 321px) and (max-width: 767px){
+    .view--container{
+        width: 95%;
+        &__overflow{
+            overflow: scroll;
+        }
+    }
+    .view--title{
+        font-size: 2rem;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1280px){
+    .view--container{
+        width: 80%;
+        &__overflow{
+            overflow: scroll;
+        }
     }
 }

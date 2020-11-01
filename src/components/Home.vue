@@ -8,7 +8,7 @@
 					<table class="view--table">
 						<thead class="view--table-header">
 							<tr class="view--table-header-row">
-								<th class="view--table-heading" align="left">Name</th>
+								<th class="view--table-heading sticky-col" align="left">Name</th>
 								<th class="view--table-heading" align="right">Price</th>
 								<th class="view--table-heading" align="right">Change 24h</th>
 								<th class="view--table-heading" align="right">Market Cap</th>
@@ -17,7 +17,7 @@
 						</thead>
 						<tbody class="view--table-body">
 							<tr v-for="crypto in cryptos" :key="crypto.id" class="view--table-row">
-								<td class="view--table-data view--table-data__flex" align="left"><img class="view--table-icon" :src="crypto.image"><router-link :to="{name: 'DisplayCurrency', params: {id: crypto.symbol}}" class="view--table-link">{{ crypto.name }}</router-link></td>
+								<td class="view--table-data view--table-data__flex sticky-col" align="left"><img class="view--table-icon" :src="crypto.image"><router-link :to="{name: 'DisplayCurrency', params: {id: crypto.symbol}}" class="view--table-link">{{ crypto.name }}</router-link></td>
 								<td class="view--table-data" align="right">{{ crypto.current_price | currency('USD', 'en-US') }}</td>
 								<td class="view--table-data" align="right">{{ crypto.price_change_percentage_24h }}</td>
 								<td class="view--table-data" align="right">{{ crypto.market_cap | currency('USD', 'en-US') }}</td>
