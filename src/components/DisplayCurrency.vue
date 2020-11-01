@@ -2,26 +2,48 @@
     <div class="view-wrapper">
         <div class="view">
             <div class="view--container">
-                <h1 class="view--title" style="display: flex; flex-direction: row; align-items: center;"> <img :src="currentCrypto.image" :alt="currentCrypto.name" style="max-width: 3rem; margin-right: 1rem;"> <span>{{ currentCrypto.name }}</span></h1>
-                <router-link to="/" class="view--table-link">Go back</router-link>
+                <h1 class="view--title view--title__flex"> <img :src="currentCrypto.image" :alt="currentCrypto.name" style="max-width: 3rem; margin-right: 1rem;"> <span>{{ currentCrypto.name }}</span></h1>
             </div>
-            <div class="view--container" style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div>
-                    <h3 class="view--title">Current price</h3>
+            <div class="view--container view--container__flex">
+                <div class="flex-item">
+                    <h3 class="view--title">Current Price</h3>
                     <p class="view--paragraph">{{ currentCrypto.current_price | currency('USD', 'en-US') }}</p>
                 </div>
-                <div>
+                <div class="flex-item">
+                     <h3 class="view--title">Circulating Supply</h3>
+                    <p class="view--paragraph">{{ currentCrypto.circulating_supply | currency('USD', 'en-US') }}</p>
+                </div>
+                <div class="flex-item">
+                    <h3 class="view--title">Total Supply</h3>
+                    <p class="view--paragraph">{{ currentCrypto.total_supply | currency('USD', 'en-US') }}</p>
+                </div>
+                <div class="flex-item">
+                    <h3 class="view--title">Market Cap</h3>
+                    <p class="view--paragraph">{{ currentCrypto.market_cap | currency('USD', 'en-US') }}</p>
+                </div>
+                <div class="flex-item">
+                    <h3 class="view--title">High 24h</h3>
+                    <p class="view--paragraph">{{ currentCrypto.high_24h | currency('USD', 'en-US') }}</p>
+                </div>
+                <div class="flex-item">
+                    <h3 class="view--title">Low 24h</h3>
+                    <p class="view--paragraph">{{ currentCrypto.low_24h | currency('USD', 'en-US') }}</p>
+                </div>
+                <div class="flex-item">
                     <h3 class="view--title">All Time High</h3>
                     <p class="view--paragraph">{{ currentCrypto.ath | currency('USD', 'en-US') }}</p>
                 </div>
-                <div>
-                     <h3 class="view--title">Circulating supply</h3>
-                    <p class="view--paragraph">{{ currentCrypto.circulating_supply | currency('USD', 'en-US') }}</p>
+                <div class="flex-item">
+                    <h3 class="view--title">All Time Low</h3>
+                    <p class="view--paragraph">{{ currentCrypto.atl | currency('USD', 'en-US') }}</p>
                 </div>
-                <div>
-                    <h3 class="view--title">Total supply</h3>
-                    <p class="view--paragraph">{{ currentCrypto.total_supply | currency('USD', 'en-US') }}</p>
+                <div class="flex-item">
+                    <h3 class="view--title">Price Change 24h</h3>
+                    <p class="view--paragraph">{{ currentCrypto.price_change_24h | currency('USD', 'en-US') }}</p>
                 </div>
+            </div>
+            <div class="view--container">
+                <router-link to="/" class="view--button">Go back</router-link>
             </div>
         </div>
     </div>

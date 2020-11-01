@@ -9,22 +9,38 @@
 	width: 80%;
 	margin: 0 auto;
     padding: 1rem 0;
+    &__flex{
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+
+    .flex-item{
+        flex: 1 0 calc(25% - 5px);
+        max-width: 1 0 calc(25% - 5px);
+        margin-bottom: 2rem;
+    }
+
 }
 
 .view--title{
 	color: $dark-grey;
 	font-size: $fs-heading-1;
-	line-height: 2;
+    line-height: 2;
+    &__flex{
+        display: flex;
+    }
 }
 
 .view--paragraph{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
     color: $grey;
 }
 
 .view--table{
-	width: 1400px;
+	width: 100%;
 }
 
 .sticky-col {
@@ -85,35 +101,90 @@
     }
 }
 
+.view--button{
+    font-size: 1rem;
+    color: $white;
+    border-radius: .25rem;
+    background-color: $blue;
+    padding: 1rem 2rem;
+    transition: .5s;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    &:hover{
+        background-color: darken($blue, 10%);
+        color: $white;
+    }
+
+    @media screen and (max-width: 767px){
+        width: -webkit-fill-available;
+    }
+
+}
+
 
 @media screen and (max-width: 320px) {
 	.view--container{
         width: 280px;
+        flex-direction: column;
         &__overflow{
             overflow: scroll;
         }
+
+        .flex-item{
+            flex: 1;
+            max-width: 100%;
+        }
+
     }
+
     .view--title{
         font-size: 1.5rem;
+    }
+
+    .view--table{
+        width: 1400px;
     }
 }
 
 @media screen and (min-width: 321px) and (max-width: 767px){
     .view--container{
-        width: 95%;
+        width: 90%;
+        flex-direction: column;
         &__overflow{
             overflow: scroll;
+        }
+
+        .flex-item{
+            flex: 1;
+            max-width: 100%;
         }
     }
     .view--title{
         font-size: 2rem;
     }
+
+    .view--table{
+        width: 1400px;
+    }
 }
-@media screen and (min-width: 768px) and (max-width: 1280px){
+@media screen and (min-width: 768px) and (max-width: 1400px){
     .view--container{
-        width: 80%;
+        width: 85%;
+        // flex-direction: row;
         &__overflow{
             overflow: scroll;
         }
+
+        .flex-item{
+            flex: 1 0 calc(50% - 5px);
+            max-width: 1 0 calc(50% - 5px);
+        }
+
     }
+
+    .view--table{
+        width: 1400px;
+    }
+
 }
