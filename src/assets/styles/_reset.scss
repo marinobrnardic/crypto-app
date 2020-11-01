@@ -1,26 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
 
-//Colors
-$light-grey: #F9F9F9;
-$grey: #888888;
-$grey2: #d4d4d4;
-$dark-grey: #444444;
-$dark-grey2: #2d2727;
-$white: #ffffff;
-$blue: #4d94e8;
-$error-red: #EA3943;
-$success-green: #16C784;
-
-//Font sizes
-$fs-heading-1: 2rem;
-
-//Fonts
-$font-oswald: 'Oswald', sans-serif;
-
-/*SETTING DEFAULT FONT SIZE VALUE*/
 html {font-size: 16px;}
 
-/*CSS RESET START*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -37,7 +17,6 @@ body {
   font-family: $font-oswald;
 }
 
-
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -47,4 +26,3 @@ table {
 a {
   text-decoration: none;
 }
-/*CSS RESET END*/
