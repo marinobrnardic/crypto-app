@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        cryptos: [],
+        cryptos: []
     },
     mutations: {
         SET_CRYPTOS (state, cryptos) {
@@ -20,6 +20,7 @@ export const store = new Vuex.Store({
                 })
                 .then(response => {
                     commit('SET_CRYPTOS', response.data);
+                    console.log(response.data);
                 })
         }
     }
