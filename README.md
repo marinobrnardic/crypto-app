@@ -1,6 +1,6 @@
 # brnardic-crypto
 
-> A Vue.js project
+> In this project I used Vue.js, Vuex and Vue Router. To fetch API data I used Axios. I also used Vuetensils for currency formatting.
 
 ## Build Setup
 
